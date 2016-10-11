@@ -1,0 +1,27 @@
+<div class="jumbotron clear">
+  <h1>{{detail.title}}</h1>
+  <img class = 'show' ng-src="{{detail.images.large}}" alt="">
+  <div class = 'detail'>
+  	<p>上映年份：{{detail.year}}</p>
+  	<p>评分：{{detail.rating.average}}</p>
+  	<p>收藏：{{detail.rating.stars}}</p>
+  	<span>{{detail.reviews_count}}人看过</span>
+  	<span>{{detail.wish_count}}人想看</span>
+  </div>
+  <p>演职员表：</p>
+  <ul>
+	<li class = 'casts' ng-repeat="items in detail.casts">
+		<img ng-src="{{items.avatars.small}}" alt="">
+		<p>{{items.name}}</p>
+	</li>
+  </ul>
+   
+</div>
+<p>剧情简介：</p>
+<p>{{detail.summary}}</p>
+<div class="mark" ng-show = 'loading'>
+<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
+</div>

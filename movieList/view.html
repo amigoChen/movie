@@ -1,0 +1,39 @@
+<h1 class="page-header">{{data.title}}</h1>
+<div class="list-group">
+  <a href="#/detail/{{item.id}}" class="list-group-item" ng-repeat="item in subjects">
+  <span class="badge">{{item.rating.average}}</span>
+  	<div class="media-list">
+  <div class="media">
+    <div class="media-left" href="#">
+      <img ng-src="{{item.images.medium}}" alt="item.title">
+    </div>
+    <div class="media-body">
+      <h2 class="media-heading">{{item.title}}</h2>
+      <p>导演:<span ng-repeat="d in item.directors">
+      	{{d.name}}<span ng-if = '!$last'>、</span>
+      </span>
+      </p>
+      <p>演员:<span ng-repeat="c in item.casts">
+      	{{c.name}}<span ng-if = '!$last'>、</span>
+      </span>
+      </p>
+      <p>上映年份：{{item.year}}&nbsp&nbsp&nbsp<span>看过的人:{{item.collect_count}}</span></p>
+    </div>
+  </div>
+</div>
+  </a>
+</div>
+<nav>
+<span>当前第{{currentPage}}页,共{{allPage}}页</span>
+  <ul class="pager">
+    <li><button ng-click = 'turnPage(currentPage-1)'>上一页</button></li>
+    <li><button ng-click = 'turnPage(currentPage+1)'>下一页</button></li>
+  </ul>
+</nav>
+<h2 ng-if = "!allPage">loading...</h2>
+<div class="mark" ng-show = 'loading'>
+<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
+</div>

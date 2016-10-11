@@ -1,0 +1,22 @@
+<div ng-controller="activeController">
+	<h1 ng-show="now == '/CN'">国内票房</h1>
+	<h1 ng-show="now == '/HK'">香港票房</h1>
+	<h1 ng-show="now == '/US'">欧美票房</h1>
+</div>
+<div class="list-group">
+  <a href="#" class="list-group-item" ng-repeat="item in result">
+  <h2>
+  影片名：{{item.name}}	
+  </h2>
+  <h3>当前排名：第{{item.rid}}名</h3>
+  <h4>时间：{{item.wk}}</h4>
+  <h4>周票房：{{item.wboxoffice}}</h4>
+  <h4>总票房：{{item.tboxoffice}}</h4>
+  </a>
+</div>
+<div class="mark" ng-show = 'loading'>
+<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
+</div>
